@@ -1,0 +1,571 @@
+fileFormatVersion: 2
+guid: 9c43976c65b84bf46a66f77715585906
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: Farmer_Bip001
+    100004: Farmer_Bip001 Footsteps
+    100006: Farmer_Bip001 Head
+    100008: Farmer_Bip001 HeadNub
+    100010: Farmer_Bip001 L Calf
+    100012: Farmer_Bip001 L Clavicle
+    100014: Farmer_Bip001 L Foot
+    100016: Farmer_Bip001 L Forearm
+    100018: Farmer_Bip001 L Hand
+    100020: Farmer_Bip001 L Thigh
+    100022: Farmer_Bip001 L Toe0
+    100024: Farmer_Bip001 L Toe0Nub
+    100026: Farmer_Bip001 L UpperArm
+    100028: Farmer_Bip001 Neck
+    100030: Farmer_Bip001 Pelvis
+    100032: Farmer_Bip001 R Calf
+    100034: Farmer_Bip001 R Clavicle
+    100036: Farmer_Bip001 R Foot
+    100038: Farmer_Bip001 R Forearm
+    100040: Farmer_Bip001 R Hand
+    100042: Farmer_Bip001 R Thigh
+    100044: Farmer_Bip001 R Toe0
+    100046: Farmer_Bip001 R Toe0Nub
+    100048: Farmer_Bip001 R UpperArm
+    100050: Farmer_Bip001 Spine
+    100052: Farmer_Bip001 Spine1
+    100054: Farmer_Body
+    100056: Farmer_pipe
+    100058: Farmer_plow
+    100060: Farmer_plow_Bone001
+    400000: //RootNode
+    400002: Farmer_Bip001
+    400004: Farmer_Bip001 Footsteps
+    400006: Farmer_Bip001 Head
+    400008: Farmer_Bip001 HeadNub
+    400010: Farmer_Bip001 L Calf
+    400012: Farmer_Bip001 L Clavicle
+    400014: Farmer_Bip001 L Foot
+    400016: Farmer_Bip001 L Forearm
+    400018: Farmer_Bip001 L Hand
+    400020: Farmer_Bip001 L Thigh
+    400022: Farmer_Bip001 L Toe0
+    400024: Farmer_Bip001 L Toe0Nub
+    400026: Farmer_Bip001 L UpperArm
+    400028: Farmer_Bip001 Neck
+    400030: Farmer_Bip001 Pelvis
+    400032: Farmer_Bip001 R Calf
+    400034: Farmer_Bip001 R Clavicle
+    400036: Farmer_Bip001 R Foot
+    400038: Farmer_Bip001 R Forearm
+    400040: Farmer_Bip001 R Hand
+    400042: Farmer_Bip001 R Thigh
+    400044: Farmer_Bip001 R Toe0
+    400046: Farmer_Bip001 R Toe0Nub
+    400048: Farmer_Bip001 R UpperArm
+    400050: Farmer_Bip001 Spine
+    400052: Farmer_Bip001 Spine1
+    400054: Farmer_Body
+    400056: Farmer_pipe
+    400058: Farmer_plow
+    400060: Farmer_plow_Bone001
+    4300000: Farmer_plow
+    4300002: Farmer_Body
+    4300004: Farmer_pipe
+    7400000: Take 001
+    9500000: //RootNode
+    11100000: //RootNode
+    13700000: Farmer_Body
+    13700002: Farmer_pipe
+    13700004: Farmer_plow
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 3
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Take 001
+      takeName: Take 001
+      firstFrame: 0
+      lastFrame: 100
+      wrapMode: 2
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 1
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 1
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Farmer_Bip001
+        weight: 1
+      - path: Farmer_Bip001/Farmer_Bip001 Footsteps
+        weight: 1
+      - path: Farmer_Bip001/Farmer_Bip001 Pelvis
+        weight: 1
+      - path: Farmer_Bip001/Farmer_Bip001 Pelvis/Farmer_Bip001 Spine
+        weight: 1
+      - path: Farmer_Bip001/Farmer_Bip001 Pelvis/Farmer_Bip001 Spine/Farmer_Bip001
+          L Thigh
+        weight: 1
+      - path: Farmer_Bip001/Farmer_Bip001 Pelvis/Farmer_Bip001 Spine/Farmer_Bip001
+          L Thigh/Farmer_Bip001 L Calf
+        weight: 1
+      - path: Farmer_Bip001/Farmer_Bip001 Pelvis/Farmer_Bip001 Spine/Farmer_Bip001
+          L Thigh/Farmer_Bip001 L Calf/Farmer_Bip001 L Foot
+        weight: 1
+      - path: Farmer_Bip001/Farmer_Bip001 Pelvis/Farmer_Bip001 Spine/Farmer_Bip001
+          L Thigh/Farmer_Bip001 L Calf/Farmer_Bip001 L Foot/Farmer_Bip001 L Toe0
+        weight: 1
+      - path: Farmer_Bip001/Farmer_Bip001 Pelvis/Farmer_Bip001 Spine/Farmer_Bip001
+          L Thigh/Farmer_Bip001 L Calf/Farmer_Bip001 L Foot/Farmer_Bip001 L Toe0/Farmer_Bip001
+          L Toe0Nub
+        weight: 1
+      - path: Farmer_Bip001/Farmer_Bip001 Pelvis/Farmer_Bip001 Spine/Farmer_Bip001
+          R Thigh
+        weight: 1
+      - path: Farmer_Bip001/Farmer_Bip001 Pelvis/Farmer_Bip001 Spine/Farmer_Bip001
+          R Thigh/Farmer_Bip001 R Calf
+        weight: 1
+      - path: Farmer_Bip001/Farmer_Bip001 Pelvis/Farmer_Bip001 Spine/Farmer_Bip001
+          R Thigh/Farmer_Bip001 R Calf/Farmer_Bip001 R Foot
+        weight: 1
+      - path: Farmer_Bip001/Farmer_Bip001 Pelvis/Farmer_Bip001 Spine/Farmer_Bip001
+          R Thigh/Farmer_Bip001 R Calf/Farmer_Bip001 R Foot/Farmer_Bip001 R Toe0
+        weight: 1
+      - path: Farmer_Bip001/Farmer_Bip001 Pelvis/Farmer_Bip001 Spine/Farmer_Bip001
+          R Thigh/Farmer_Bip001 R Calf/Farmer_Bip001 R Foot/Farmer_Bip001 R Toe0/Farmer_Bip001
+          R Toe0Nub
+        weight: 1
+      - path: Farmer_Bip001/Farmer_Bip001 Pelvis/Farmer_Bip001 Spine/Farmer_Bip001
+          Spine1
+        weight: 1
+      - path: Farmer_Bip001/Farmer_Bip001 Pelvis/Farmer_Bip001 Spine/Farmer_Bip001
+          Spine1/Farmer_Bip001 Neck
+        weight: 1
+      - path: Farmer_Bip001/Farmer_Bip001 Pelvis/Farmer_Bip001 Spine/Farmer_Bip001
+          Spine1/Farmer_Bip001 Neck/Farmer_Bip001 Head
+        weight: 1
+      - path: Farmer_Bip001/Farmer_Bip001 Pelvis/Farmer_Bip001 Spine/Farmer_Bip001
+          Spine1/Farmer_Bip001 Neck/Farmer_Bip001 Head/Farmer_Bip001 HeadNub
+        weight: 1
+      - path: Farmer_Bip001/Farmer_Bip001 Pelvis/Farmer_Bip001 Spine/Farmer_Bip001
+          Spine1/Farmer_Bip001 Neck/Farmer_Bip001 L Clavicle
+        weight: 1
+      - path: Farmer_Bip001/Farmer_Bip001 Pelvis/Farmer_Bip001 Spine/Farmer_Bip001
+          Spine1/Farmer_Bip001 Neck/Farmer_Bip001 L Clavicle/Farmer_Bip001 L UpperArm
+        weight: 1
+      - path: Farmer_Bip001/Farmer_Bip001 Pelvis/Farmer_Bip001 Spine/Farmer_Bip001
+          Spine1/Farmer_Bip001 Neck/Farmer_Bip001 L Clavicle/Farmer_Bip001 L UpperArm/Farmer_Bip001
+          L Forearm
+        weight: 1
+      - path: Farmer_Bip001/Farmer_Bip001 Pelvis/Farmer_Bip001 Spine/Farmer_Bip001
+          Spine1/Farmer_Bip001 Neck/Farmer_Bip001 L Clavicle/Farmer_Bip001 L UpperArm/Farmer_Bip001
+          L Forearm/Farmer_Bip001 L Hand
+        weight: 1
+      - path: Farmer_Bip001/Farmer_Bip001 Pelvis/Farmer_Bip001 Spine/Farmer_Bip001
+          Spine1/Farmer_Bip001 Neck/Farmer_Bip001 R Clavicle
+        weight: 1
+      - path: Farmer_Bip001/Farmer_Bip001 Pelvis/Farmer_Bip001 Spine/Farmer_Bip001
+          Spine1/Farmer_Bip001 Neck/Farmer_Bip001 R Clavicle/Farmer_Bip001 R UpperArm
+        weight: 1
+      - path: Farmer_Bip001/Farmer_Bip001 Pelvis/Farmer_Bip001 Spine/Farmer_Bip001
+          Spine1/Farmer_Bip001 Neck/Farmer_Bip001 R Clavicle/Farmer_Bip001 R UpperArm/Farmer_Bip001
+          R Forearm
+        weight: 1
+      - path: Farmer_Bip001/Farmer_Bip001 Pelvis/Farmer_Bip001 Spine/Farmer_Bip001
+          Spine1/Farmer_Bip001 Neck/Farmer_Bip001 R Clavicle/Farmer_Bip001 R UpperArm/Farmer_Bip001
+          R Forearm/Farmer_Bip001 R Hand
+        weight: 1
+      - path: Farmer_Bip001/Farmer_Bip001 Pelvis/Farmer_Bip001 Spine/Farmer_Bip001
+          Spine1/Farmer_Bip001 Neck/Farmer_Bip001 R Clavicle/Farmer_Bip001 R UpperArm/Farmer_Bip001
+          R Forearm/Farmer_Bip001 R Hand/Farmer_plow_Bone001
+        weight: 1
+      - path: Farmer_Body
+        weight: 1
+      - path: Farmer_pipe
+        weight: 1
+      - path: Farmer_plow
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 0.01
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human:
+    - boneName: Farmer_Bip001 Pelvis
+      humanName: Hips
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Farmer_Bip001 L Thigh
+      humanName: LeftUpperLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Farmer_Bip001 R Thigh
+      humanName: RightUpperLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Farmer_Bip001 L Calf
+      humanName: LeftLowerLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Farmer_Bip001 R Calf
+      humanName: RightLowerLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Farmer_Bip001 L Foot
+      humanName: LeftFoot
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Farmer_Bip001 R Foot
+      humanName: RightFoot
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Farmer_Bip001 Spine
+      humanName: Spine
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Farmer_Bip001 Spine1
+      humanName: Chest
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Farmer_Bip001 Head
+      humanName: Head
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Farmer_Bip001 L Clavicle
+      humanName: LeftShoulder
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Farmer_Bip001 R Clavicle
+      humanName: RightShoulder
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Farmer_Bip001 L UpperArm
+      humanName: LeftUpperArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Farmer_Bip001 R UpperArm
+      humanName: RightUpperArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Farmer_Bip001 L Forearm
+      humanName: LeftLowerArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Farmer_Bip001 R Forearm
+      humanName: RightLowerArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Farmer_Bip001 L Hand
+      humanName: LeftHand
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Farmer_Bip001 R Hand
+      humanName: RightHand
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Farmer_Bip001 Neck
+      humanName: Neck
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    skeleton:
+    - name: Farmer(Clone)
+      parentName: 
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Farmer_Bip001
+      parentName: 
+      position: {x: 0, y: 0.36888662, z: 0.025307197}
+      rotation: {x: -0.5, y: 0.5, z: 0.5, w: 0.5}
+      scale: {x: 0.99999994, y: 0.99999994, z: 1}
+    - name: Farmer_Bip001 Footsteps
+      parentName: 
+      position: {x: -0, y: 0, z: -0.3665502}
+      rotation: {x: 0, y: 0, z: -0.70710635, w: 0.7071073}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Farmer_Bip001 Pelvis
+      parentName: 
+      position: {x: 0, y: 0, z: -0.05323437}
+      rotation: {x: -0.5202099, y: 0.47893712, z: 0.47893736, w: 0.5202114}
+      scale: {x: 1, y: 0.99999994, z: 0.99999994}
+    - name: Farmer_Bip001 Spine
+      parentName: 
+      position: {x: -0.1191418, y: -0.009969702, z: 0.00000020566644}
+      rotation: {x: -0.0000020092248, y: 0.0000007927149, z: 0.02221601, w: 0.99975324}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: Farmer_Bip001 L Thigh
+      parentName: 
+      position: {x: 0.11946704, y: 0.004667084, z: 0.14828415}
+      rotation: {x: 0.0070742983, y: 0.99822706, z: 0.0030171976, w: 0.059022427}
+      scale: {x: 1.0000001, y: 1.0000001, z: 1.0000001}
+    - name: Farmer_Bip001 L Calf
+      parentName: 
+      position: {x: -0.17071567, y: -0.0000000047683715, z: 0.000000019073486}
+      rotation: {x: -8.258162e-10, y: 0.000000007404672, z: 0.11083919, w: 0.99383837}
+      scale: {x: 1.0000001, y: 1.0000001, z: 1.0000001}
+    - name: Farmer_Bip001 L Foot
+      parentName: 
+      position: {x: -0.11512782, y: 0.0000000023841857, z: -0.000000038146972}
+      rotation: {x: 0.008425476, y: 0.05849577, z: -0.13655202, w: 0.9888685}
+      scale: {x: 0.9999999, y: 0.99999994, z: 1}
+    - name: Farmer_Bip001 L Toe0
+      parentName: 
+      position: {x: -0.08721199, y: 0.1711366, z: 0}
+      rotation: {x: -0.00000001545431, y: 0.00000001545431, z: -0.7071068, w: 0.7071068}
+      scale: {x: 0.99999994, y: 1, z: 0.99999994}
+    - name: Farmer_Bip001 L Toe0Nub
+      parentName: 
+      position: {x: -0.011375475, y: 0, z: 0}
+      rotation: {x: -9.553415e-16, y: -1.755525e-30, z: 1, w: -1.8375893e-15}
+      scale: {x: -0.99999994, y: -1, z: -0.99999994}
+    - name: Farmer_Bip001 R Thigh
+      parentName: 
+      position: {x: 0.119467124, y: 0.0046678674, z: -0.1482841}
+      rotation: {x: 0.0070741368, y: 0.99822706, z: -0.0030144327, w: -0.05902254}
+      scale: {x: 1.0000001, y: 1.0000001, z: 1.0000001}
+    - name: Farmer_Bip001 R Calf
+      parentName: 
+      position: {x: -0.17071566, y: -0.0000000011920929, z: 0.000000019073486}
+      rotation: {x: 0.0000000012387245, y: -0.000000011107009, z: 0.11083919, w: 0.99383837}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Farmer_Bip001 R Foot
+      parentName: 
+      position: {x: -0.115127824, y: 0, z: -0.000000019073486}
+      rotation: {x: -0.008425489, y: -0.058495857, z: -0.13655204, w: 0.9888685}
+      scale: {x: 1, y: 0.99999994, z: 1}
+    - name: Farmer_Bip001 R Toe0
+      parentName: 
+      position: {x: -0.08721199, y: 0.1711366, z: 0}
+      rotation: {x: 0.000000015454312, y: -0.000000015454312, z: -0.7071068, w: 0.7071068}
+      scale: {x: 0.99999994, y: 1, z: 0.99999994}
+    - name: Farmer_Bip001 R Toe0Nub
+      parentName: 
+      position: {x: -0.011375475, y: 0, z: 0}
+      rotation: {x: -1.697032e-30, y: 9.553441e-16, z: 1.776357e-15, w: 1}
+      scale: {x: 0.99999994, y: 1, z: 0.99999994}
+    - name: Farmer_Bip001 Spine1
+      parentName: 
+      position: {x: -0.13741332, y: -0.00015954375, z: -4.425078e-10}
+      rotation: {x: 2.6179571e-14, y: -0.00000022618751, z: 0.08155014, w: 0.99666923}
+      scale: {x: 1.0000001, y: 1.0000001, z: 1}
+    - name: Farmer_Bip001 Neck
+      parentName: 
+      position: {x: -0.20918639, y: -0.048465256, z: -0.00000006751754}
+      rotation: {x: -1.6466813e-14, y: 0.00000044526905, z: -0.1605383, w: 0.9870296}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: Farmer_Bip001 Head
+      parentName: 
+      position: {x: -0.056877363, y: 0, z: 0}
+      rotation: {x: -2.0166176e-14, y: -0.00000016705117, z: 0.0602297, w: 0.99818456}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: Farmer_Bip001 HeadNub
+      parentName: 
+      position: {x: -0.79319936, y: 0, z: -1.8189894e-14}
+      rotation: {x: -5.77316e-14, y: 2.1506696e-22, z: -0.0000000037252903, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Farmer_Bip001 L Clavicle
+      parentName: 
+      position: {x: 0.018862532, y: 0.053586025, z: 0.057727903}
+      rotation: {x: -0.5816836, y: -0.18446837, z: 0.7873424, w: -0.08779285}
+      scale: {x: 0.9999999, y: 0.99999994, z: 1}
+    - name: Farmer_Bip001 L UpperArm
+      parentName: 
+      position: {x: -0.19839843, y: -0.000000009536743, z: 0.000000076293944}
+      rotation: {x: 0.122764885, y: 0.1164157, z: 0.0841567, w: 0.9819847}
+      scale: {x: 1, y: 1.0000001, z: 1.0000001}
+    - name: Farmer_Bip001 L Forearm
+      parentName: 
+      position: {x: -0.18045087, y: 0, z: 0}
+      rotation: {x: -0.0029674803, y: 0.018297937, z: 0.026701437, w: 0.9994716}
+      scale: {x: 0.9999999, y: 0.99999994, z: 1}
+    - name: Farmer_Bip001 L Hand
+      parentName: 
+      position: {x: -0.12817906, y: 0.000000019073486, z: 0.000000038146972}
+      rotation: {x: -0.7068252, y: 0.0000000105492965, z: 0.00000003160594, w: 0.7073883}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Farmer_Bip001 R Clavicle
+      parentName: 
+      position: {x: 0.018862532, y: 0.05358635, z: -0.05772774}
+      rotation: {x: 0.58168346, y: 0.18446627, z: 0.7873428, w: -0.08779447}
+      scale: {x: 0.99999994, y: 0.99999994, z: 1}
+    - name: Farmer_Bip001 R UpperArm
+      parentName: 
+      position: {x: -0.19839841, y: 0, z: 0}
+      rotation: {x: -0.12276481, y: -0.11641565, z: 0.08415658, w: 0.9819847}
+      scale: {x: 1, y: 1.0000001, z: 1.0000002}
+    - name: Farmer_Bip001 R Forearm
+      parentName: 
+      position: {x: -0.18045093, y: 0, z: 0}
+      rotation: {x: 0.0029673965, y: -0.018298134, z: 0.026701573, w: 0.9994716}
+      scale: {x: 0.99999994, y: 1, z: 1}
+    - name: Farmer_Bip001 R Hand
+      parentName: 
+      position: {x: -0.12817906, y: -0.000000009536743, z: -0.000000038146972}
+      rotation: {x: 0.69614583, y: 0.12738195, z: -0.11731769, w: 0.69670033}
+      scale: {x: 1, y: 1.0000001, z: 1.0000001}
+    - name: Farmer_plow_Bone001
+      parentName: 
+      position: {x: -0.07638517, y: -0.045096207, z: 0.08655698}
+      rotation: {x: -0.23152675, y: 0.53796506, z: 0.44645095, w: 0.6765135}
+      scale: {x: 1.0000001, y: 1.0000002, z: 1.0000005}
+    - name: Farmer_Body
+      parentName: 
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Farmer_pipe
+      parentName: 
+      position: {x: -0.128556, y: 0.9050363, z: 0.29965445}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Farmer_plow
+      parentName: 
+      position: {x: 1.6902206, y: 0.8846587, z: -0.0045009516}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 1, y: 1, z: 1}
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 3
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
