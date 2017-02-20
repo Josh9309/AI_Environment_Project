@@ -14,6 +14,7 @@ public abstract class VehicleMovement : MonoBehaviour {
     protected Vector3 direction;
     protected Vector3 force;
     protected Vector3 desired;
+    protected Vector3 previousPosition;
     // Public fields
     [Tooltip("Maximum speed of the character")]
     public float maxSpeed = 6.0f;
@@ -39,10 +40,19 @@ public abstract class VehicleMovement : MonoBehaviour {
         velocity = Vector3.ClampMagnitude(velocity, maxSpeed);
         // Set forward to direction - note: throws a warning when velocity is zero
         transform.forward = velocity.normalized;
+        // Update previous position
+        previousPosition = this.transform.position;
         // Move character - note: uses simple addition to position, perhaps not the best way of doing this
         this.transform.position += velocity * Time.deltaTime;
+        //this.GetComponent<Rigidbody>().MovePosition(this.transform.position += velocity * Time.deltaTime);
         // Reset acceleration
         acceleration = Vector3.zero;
+    }
+
+    void OnCollisionEnter(Collision collision)
+    {
+        // Apply a force to push you out of walls
+        this.Seek(this.transform.position - this.velocity);
     }
     #endregion
 

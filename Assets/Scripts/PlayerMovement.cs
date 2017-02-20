@@ -14,8 +14,6 @@ public class PlayerMovement : VehicleMovement {
     {
         force = Vector3.zero;
 
-
-
         // Up/down movement
         if (Input.GetKey(KeyCode.W))
         {
@@ -46,7 +44,7 @@ public class PlayerMovement : VehicleMovement {
         force = Vector3.ClampMagnitude(force, maxForce);
 
         // Clamp position to terrain
-        SnapToTerrain();
+        //SnapToTerrain();  //Don't do this anymore! We have bridges now
 
         // Apply force to acceleration
         ApplyForce(force);

@@ -34,7 +34,7 @@ public class CameraOrbit : MonoBehaviour {
         
         //Make sure the camera isn't inside a wall using raycasting
 		RaycastHit hit;
-        if (Physics.Raycast(orbitPoint.position, (this.transform.position - orbitPoint.position).normalized, out hit, dist))
+        if (Physics.Raycast(orbitPoint.position, (this.transform.position - orbitPoint.position).normalized, out hit, dist, 8))
         {
             //Snap the camera to the wall if it got stuck in one
 			transform.position = hit.point;
