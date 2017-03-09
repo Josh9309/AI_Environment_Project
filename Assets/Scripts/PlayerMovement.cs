@@ -43,9 +43,6 @@ public class PlayerMovement : VehicleMovement {
         // Clamp force
         force = Vector3.ClampMagnitude(force, maxForce);
 
-        // Clamp position to terrain
-        //SnapToTerrain();  //Don't do this anymore! We have bridges now
-
         // Apply force to acceleration
         ApplyForce(force);
     }

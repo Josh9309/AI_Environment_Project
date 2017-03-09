@@ -15,6 +15,7 @@ public abstract class VehicleMovement : MonoBehaviour {
     protected Vector3 force;
     protected Vector3 desired;
     protected Vector3 previousPosition;
+    protected GameObject[] flock;
     // Public fields
     [Tooltip("Maximum speed of the character")]
     public float maxSpeed = 6.0f;
@@ -24,9 +25,14 @@ public abstract class VehicleMovement : MonoBehaviour {
     public float mass = 1.0f;
     [Tooltip("Radius of the character, used with terrain snapping among other things")]
     public float radius = 1.0f;
+    [Tooltip("How far to turn away from obstacles")]
+    public float avoidObstacleNormalLength = 7.0f;
+    [Tooltip("Distance for separation in flockers")]
+    public float tooCloseDist = 3.0f;
 
     #region Unity Defaults
     virtual public void Start () {
+        flock = GameObject.FindGameObjectsWithTag("Flocker");
         acceleration = Vector3.zero;
         velocity = transform.forward;
     }
@@ -42,9 +48,11 @@ public abstract class VehicleMovement : MonoBehaviour {
         transform.forward = velocity.normalized;
         // Update previous position
         previousPosition = this.transform.position;
-        // Move character - note: uses simple addition to position, perhaps not the best way of doing this
-        this.transform.position += velocity * Time.deltaTime;
-        //this.GetComponent<Rigidbody>().MovePosition(this.transform.position += velocity * Time.deltaTime);
+        // Move character
+        //this.transform.position += velocity * Time.deltaTime; // old way of doing things
+        this.GetComponent<Rigidbody>().MovePosition(this.transform.position += velocity * Time.deltaTime);
+        //this.GetComponent<Rigidbody>().velocity = this.velocity * Time.deltaTime; //THIS DOES NOT WORK! 'velocity' is a unit vector
+        this.GetComponent<Rigidbody>().AddForce(this.transform.up * -9.81f);
         // Reset acceleration
         acceleration = Vector3.zero;
     }
@@ -52,7 +60,7 @@ public abstract class VehicleMovement : MonoBehaviour {
     void OnCollisionEnter(Collision collision)
     {
         // Apply a force to push you out of walls
-        this.Seek(this.transform.position - this.velocity);
+        this.Seek(this.transform.position - collision.transform.position);
     }
     #endregion
 
@@ -81,35 +89,38 @@ public abstract class VehicleMovement : MonoBehaviour {
         return desired;
     }
 
-    protected void SnapToTerrain()
+    protected Vector3 AvoidObstacle(float safe)
     {
-        this.transform.position = new Vector3(this.transform.position.x, Terrain.activeTerrain.SampleHeight(this.transform.position) + this.radius, this.transform.position.z);
+        RaycastHit hitInfo;
+        if (Physics.Raycast(this.transform.position, this.transform.forward, out hitInfo, safe))
+            return Seek(hitInfo.transform.position + (hitInfo.normal * avoidObstacleNormalLength));
+        return Vector3.zero;
     }
     #endregion
 
     #region Flocking Methods
-    /* // Alignment method
+     // Alignment method
     protected Vector3 Alignment(Vector3 flockDirection)
     {
         desired = flockDirection - this.transform.forward;
         desired = desired.normalized * maxSpeed;
         desired -= velocity;
         return desired;
-    }*/
-    /* // Cohesion method
+    }
+     // Cohesion method
     protected Vector3 Cohesion(Vector3 centroidLocation)
     {
         desired = centroidLocation - this.transform.position;
         desired = desired.normalized * maxSpeed;
         desired -= velocity;
         return desired;
-    }*/
-    /*// Separation method    
+    }
+    // Separation method    
     protected Vector3 Separation()
     {
         Vector3 sumVel = Vector3.zero;
         float tempDist;
-        foreach (GameObject g in Flock)
+        foreach (GameObject g in flock)
         {
             if (g != this.gameObject)
             {
@@ -123,6 +134,6 @@ public abstract class VehicleMovement : MonoBehaviour {
         sumVel = sumVel.normalized * maxSpeed;
         sumVel = sumVel - velocity;
         return sumVel;
-    }*/
+    }
     #endregion
 }
