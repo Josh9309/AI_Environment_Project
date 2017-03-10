@@ -8,6 +8,14 @@ using UnityEngine;
 /// </summary>
 public abstract class VehicleMovement : MonoBehaviour {
 
+    // Access to GameManager scriot
+    protected GameManager gm;
+    // Properties
+    public Vector3 Velocity
+    {
+        get { return velocity; }
+    }
+
     // Private fields
     protected Vector3 velocity;
     protected Vector3 acceleration;
@@ -28,13 +36,14 @@ public abstract class VehicleMovement : MonoBehaviour {
     [Tooltip("How far to turn away from obstacles")]
     public float avoidObstacleNormalLength = 7.0f;
     [Tooltip("Distance for separation in flockers")]
-    public float tooCloseDist = 3.0f;
+    public float tooCloseDist = 4000.0f;
 
     #region Unity Defaults
     virtual public void Start () {
         flock = GameObject.FindGameObjectsWithTag("Flocker");
         acceleration = Vector3.zero;
         velocity = transform.forward;
+        gm = GameObject.Find("GameManagerGO").GetComponent<GameManager>();
     }
 	
 	void Update () {
@@ -89,17 +98,58 @@ public abstract class VehicleMovement : MonoBehaviour {
         return desired;
     }
 
-    protected Vector3 AvoidObstacle(float safe)
+    //protected Vector3 AvoidObstacle(float safe)
+    //{
+    //    RaycastHit hitInfo;
+    //    if (Physics.Raycast(this.transform.position, this.transform.forward, out hitInfo, safe))
+    //        return Seek(hitInfo.transform.position + (hitInfo.normal * avoidObstacleNormalLength));
+    //    return Vector3.zero;
+    //}
+    protected Vector3 AvoidObstacle(GameObject ob, float safe)
     {
-        RaycastHit hitInfo;
-        if (Physics.Raycast(this.transform.position, this.transform.forward, out hitInfo, safe))
-            return Seek(hitInfo.transform.position + (hitInfo.normal * avoidObstacleNormalLength));
-        return Vector3.zero;
+        // reset desired 
+        desired = Vector3.zero;
+        // get radius from obstacle
+        float obsR = ob.GetComponent<ObstacleScript>().Radius;
+        // get vector from vehicle to obstacle
+        Vector3 vecToCenter = ob.transform.position - transform.position;
+        // zero-out y component 
+        vecToCenter.y = 0;
+        // ignore object out of safe zone
+        if (vecToCenter.magnitude > safe)
+        {
+            return Vector3.zero;
+        }
+        // ignore obj behind me
+        if (Vector3.Dot(vecToCenter, transform.forward) < 0)
+        {
+            return Vector3.zero;
+        }
+        // ignore obj not in forward path
+        if (Mathf.Abs(Vector3.Dot(vecToCenter, transform.right)) > obsR + radius)
+        {
+            return Vector3.zero;
+        }
+        // collide with an obstacle
+        // obj on left, steer right
+        if (Vector3.Dot(vecToCenter, transform.right) < 0)
+        {
+            desired = transform.right * maxSpeed;
+            // debug line 
+            Debug.DrawLine(transform.position, ob.transform.position, Color.red);
+        }
+        else
+        {
+            desired = transform.right * -maxSpeed;
+            // debug line
+            Debug.DrawLine(transform.position, ob.transform.position, Color.green);
+        }
+        return desired;
     }
     #endregion
 
     #region Flocking Methods
-     // Alignment method
+    // Alignment method
     protected Vector3 Alignment(Vector3 flockDirection)
     {
         desired = flockDirection - this.transform.forward;
@@ -125,6 +175,8 @@ public abstract class VehicleMovement : MonoBehaviour {
             if (g != this.gameObject)
             {
                 tempDist = Vector3.Distance(this.gameObject.transform.position, g.transform.position);
+
+                Debug.Log("TooCose Dis: "+ tooCloseDist + " Distance Now: " + tempDist);
                 if (tempDist < tooCloseDist)
                 {
                     sumVel += ((g.transform.position - transform.position) * -1) * maxSpeed * (1 / tempDist);
@@ -134,6 +186,25 @@ public abstract class VehicleMovement : MonoBehaviour {
         sumVel = sumVel.normalized * maxSpeed;
         sumVel = sumVel - velocity;
         return sumVel;
+    }
+    //Arrivial Method
+    protected Vector3 Arrive(Vector3 target)
+    {
+        desired = target - transform.position;
+        float d = desired.magnitude;
+
+        if (d < 5)
+        {
+            desired = desired.normalized * maxSpeed * (d / 1); // need to change
+        }
+        else
+        {
+            desired = desired.normalized * maxSpeed;
+
+        }
+        desired -= velocity;
+        desired.y = 0;
+        return desired;
     }
     #endregion
 }

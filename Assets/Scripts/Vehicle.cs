@@ -20,7 +20,7 @@ abstract public class Vehicle : MonoBehaviour
 
 
     // Access to GameManager scriot
-    //protected GameManager gm;
+    protected GameManager gm;
 
     // Properties
     public Vector3 Velocity
