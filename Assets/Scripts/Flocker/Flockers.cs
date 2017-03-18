@@ -22,11 +22,11 @@ public class Flockers : VehicleMovement
 
     // WEIGHT
     //public float wanderWeight = 75.0f;
-    private float safeDistance = 30.0f;
+    private float safeDistance = 20.0f;
     private float seekWeight = 100.0f;
     private float avoidWeight = 240.0f;
     //private float stayInWeight = 200.0f;
-    private float seperateWeight = 70.0f;
+    private float seperateWeight = 60.0f;
     private float alignmentWeight = 30.0f;
     private float cohesionWeight = 30.0f;
     private float queueingWeight = 40.0f;
