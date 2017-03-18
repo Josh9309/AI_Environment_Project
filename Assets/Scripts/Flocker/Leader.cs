@@ -16,10 +16,10 @@ public class Leader : VehicleMovement {
 
 
     // WEIGHT
-    public float seekWeight = 75.0f;
-    public float safeDistance = 100.0f;
-    public float avoidWeight = 240.0f;
-    public float seperateSafeDis = 5.0f; // not sure if i need this or not;
+    private float seekWeight = 75.0f;
+    private float safeDistance = 30.0f;
+    private float avoidWeight = 340.0f;
+    //private float seperateSafeDis = 5.0f; // not sure if i need this or not;
     // Use this for initialization
     override public void Start()
     {
@@ -86,6 +86,7 @@ public class Leader : VehicleMovement {
         // limited the seeker's steering force
         force = Vector3.ClampMagnitude(force, maxForce);
 
+        force.y = 0;
         // applied the steering Force to this Vehicle's acceleration(ApplyForce);
         ApplyForce(force);
 

@@ -39,7 +39,7 @@ public abstract class VehicleMovement : MonoBehaviour {
     [Tooltip("How far to turn away from obstacles")]
     public float avoidObstacleNormalLength = 7.0f;
     [Tooltip("Distance for separation in flockers")]
-    public float tooCloseDist = 4000.0f;
+    private float tooCloseDist = 10;
 
     #region Unity Defaults
     virtual public void Start () {
@@ -117,7 +117,7 @@ public abstract class VehicleMovement : MonoBehaviour {
         // get vector from vehicle to obstacle
         Vector3 vecToCenter = ob.transform.position - transform.position;
         // zero-out y component 
-        vecToCenter.y = 0;
+        //vecToCenter.y = 0;
         // ignore object out of safe zone
         if (vecToCenter.magnitude > safe)
         {
@@ -163,9 +163,11 @@ public abstract class VehicleMovement : MonoBehaviour {
      // Cohesion method
     protected Vector3 Cohesion(Vector3 centroidLocation)
     {
+        //Debug.Log("Centroid: " + centroidLocation);
         desired = centroidLocation - this.transform.position;
         desired = desired.normalized * maxSpeed;
         desired -= velocity;
+        desired.y = 0;
         return desired;
     }
     // Separation method    
@@ -188,6 +190,7 @@ public abstract class VehicleMovement : MonoBehaviour {
         }
         sumVel = sumVel.normalized * maxSpeed;
         sumVel = sumVel - velocity;
+
         return sumVel;
     }
     //Arrivial Method

@@ -72,7 +72,9 @@ public class GameManager : MonoBehaviour {
         {
             totalPosition += flock[i].transform.position;
         }
-        //Debug.Log("centroid: " + centroid);
+        Debug.Log("totalPosition: " + totalPosition);
+
+        Debug.Log("centroid: " + centroid);
         centroid = totalPosition / flock.Count;
     }
     void CalcDirection()

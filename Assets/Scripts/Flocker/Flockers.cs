@@ -9,7 +9,7 @@ public class Flockers : VehicleMovement
     // attribute
     public GameObject leaderFlocker; // use later
     private Vector3 tv;
-    private int leaderBehindDist = 1;
+    private int leaderBehindDist = 20;
     private Vector3 behind;
     // Seeker's steering force
     //private Vector3 force;
@@ -18,14 +18,14 @@ public class Flockers : VehicleMovement
 
     // WEIGHT
     //public float wanderWeight = 75.0f;
-    public float safeDistance = 100.0f;
-    public float seekWeight = 90.0f;
-    public float avoidWeight = 240.0f;
-    public float stayInWeight = 200.0f;
-    public float seperateWeight = 40.0f;
-    public float alignmentWeight = 20.0f;
-    public float cohesionWeight = 20.0f;
-    public float queueingWeight = 40.0f;
+    private float safeDistance = 30.0f;
+    private float seekWeight = 100.0f;
+    private float avoidWeight = 80.0f;
+    //private float stayInWeight = 200.0f;
+    private float seperateWeight = 50.0f;
+    private float alignmentWeight = 30.0f;
+    private float cohesionWeight = 40.0f;
+    private float queueingWeight = 40.0f;
 
     // Use this for initialization
     override public void Start()
@@ -70,9 +70,7 @@ public class Flockers : VehicleMovement
             force += AvoidObstacle(gm.Obstacles[i], safeDistance) * avoidWeight;
         }
 
-        // add the obstacle force to it
 
-        //force += AvoidObstacle(safeDistance) * avoidWeight;
 
         // call the flock method
 
@@ -90,7 +88,7 @@ public class Flockers : VehicleMovement
         force += Queue() * queueingWeight;
 
         force = Vector3.ClampMagnitude(force, maxForce);
-
+        force.y = 0;
         // applied the steering Force to this Vehicle's acceleration(ApplyForce);
         ApplyForce(force);
 
