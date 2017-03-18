@@ -72,24 +72,8 @@ public class GameManager : MonoBehaviour {
         Debug.DrawLine(centroid, path[pathCount].transform.position, Color.green);
         float dis = (centroid - path[pathCount].transform.position).magnitude;
         // What to do with way point
-        if (dis < 5)
+        if (dis < 7)
         {
-            //if (inward == true)
-            //{
-            //    pathCount++;
-            //    if (pathCount >= path.Count - 1)
-            //    {
-            //        inward = false;
-            //    }
-            //}
-            //else if (inward == false)
-            //{
-            //    pathCount--;
-            //    if (pathCount <= 0)
-            //    {
-            //        inward = true;
-            //    }
-            //}
             pathCount++;
             if (pathCount >= path.Count - 1)
             {
