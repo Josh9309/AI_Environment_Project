@@ -26,7 +26,7 @@ public abstract class VehicleMovement : MonoBehaviour {
     protected GameObject[] flock;
     protected Vector3 queueFuturePoint;
     [SerializeField] protected const float MAX_QUEUE_AHEAD_DIST = 8f;
-    [SerializeField] protected const float MAX_QUEUE_RADIUS = 2.40f;
+    [SerializeField] protected const float MAX_QUEUE_RADIUS = 4f;
     // Public fields
     [Tooltip("Maximum speed of the character")]
     public float maxSpeed = 6.0f;

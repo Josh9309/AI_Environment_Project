@@ -14,17 +14,21 @@ public class Flockers : VehicleMovement
     // Seeker's steering force
     //private Vector3 force;
 
+    private int pathCount;
 
+    private List<GameObject> path;
+
+    private Vector3 seekTarget;
 
     // WEIGHT
     //public float wanderWeight = 75.0f;
     private float safeDistance = 30.0f;
     private float seekWeight = 100.0f;
-    private float avoidWeight = 80.0f;
+    private float avoidWeight = 240.0f;
     //private float stayInWeight = 200.0f;
     private float seperateWeight = 50.0f;
     private float alignmentWeight = 30.0f;
-    private float cohesionWeight = 40.0f;
+    private float cohesionWeight = 0.0f;
     private float queueingWeight = 40.0f;
 
     // Use this for initialization
@@ -35,12 +39,13 @@ public class Flockers : VehicleMovement
 
         // initialize
         force = Vector3.zero;
+        pathCount = 0;
+        path = GameObject.Find("PathManager").GetComponent<AStarManager>().FlockingPathList;
     }
 
     // Class Method
     protected override void CalculateSteeringForces()
     {
-
         // reset value to zero
         force = Vector3.zero;
 
@@ -48,22 +53,53 @@ public class Flockers : VehicleMovement
         //Vector3 wonderF = base.Wander();
         //Debug.Log("wonderF: " + wonderF);
         // leader code
-        float leaderDis = (leaderFlocker.GetComponent<Leader>().transform.position - transform.position).magnitude;
-        if (leaderDis < leaderFlocker.GetComponent<Leader>().radius + radius)
-        {
-            if (Vector3.Dot(transform.position, leaderFlocker.GetComponent<Leader>().transform.position) > 0)
-            {
-                // at right, steer left
-                force += Seek(-transform.right);
-            }
-            else
-            {
-                // at left, steer right
-                force += Seek(transform.right);
-            }
-        }
-        force += LeaderFollow()* seekWeight;
+        //float leaderDis = (leaderFlocker.GetComponent<Leader>().transform.position - transform.position).magnitude;
+        //if (leaderDis < leaderFlocker.GetComponent<Leader>().radius + radius)
+        //{
+        //    if (Vector3.Dot(transform.position, leaderFlocker.GetComponent<Leader>().transform.position) > 0)
+        //    {
+        //        // at right, steer left
+        //        force += Seek(-transform.right);
+        //    }
+        //    else
+        //    {
+        //        // at left, steer right
+        //        force += Seek(transform.right);
+        //    }
+        //}
+        //force += LeaderFollow()* seekWeight;
 
+        //pathfollowing
+        //force += Seek(path[pathCount].transform.position) * seekWeight;
+        //Debug.DrawLine(transform.position, path[pathCount].transform.position, Color.green);
+        //float dis = (transform.position - path[pathCount].transform.position).magnitude;
+        //// What to do with way point
+        //if (dis < 5)
+        //{
+        //    //if (inward == true)
+        //    //{
+        //    //    pathCount++;
+        //    //    if (pathCount >= path.Count - 1)
+        //    //    {
+        //    //        inward = false;
+        //    //    }
+        //    //}
+        //    //else if (inward == false)
+        //    //{
+        //    //    pathCount--;
+        //    //    if (pathCount <= 0)
+        //    //    {
+        //    //        inward = true;
+        //    //    }
+        //    //}
+        //    pathCount++;
+        //    if (pathCount >= path.Count - 1)
+        //    {
+        //        pathCount = 0;
+        //    }
+        //}
+
+        force += Seek(gm.FlockSeekTarget) * seekWeight;
         // avoid obstacles
         for (int i = 0; i < gm.Obstacles.Length; i++)
         {
