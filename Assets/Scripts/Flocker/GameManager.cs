@@ -66,24 +66,32 @@ public class GameManager : MonoBehaviour {
     void CalcCentroid()
     {
         // not sure
+        Vector3 totalPosition = Vector3.zero;
+
         for (int i = 0; i < flock.Count; i++)
         {
-            centroid = centroid + flock[i].transform.position;
+            totalPosition += flock[i].transform.position;
         }
         //Debug.Log("centroid: " + centroid);
-        centroid = centroid / flock.Count;
-
+        centroid = totalPosition / flock.Count;
     }
     void CalcDirection()
     {
         // not sure
+        Vector3 totalPosition = Vector3.zero;
         for (int i = 0; i < flock.Count; i++)
         {
-            flockDirection = flockDirection + flock[i].transform.forward;
+            totalPosition += flock[i].transform.forward;
         }
-        flockDirection = flockDirection / flock.Count;
+        flockDirection = totalPosition / flock.Count;
     }
 
+    void OnDrawGizmos()
+    {
+        Gizmos.color = Color.blue;
+        Gizmos.DrawSphere(Centroid, 2f);
+        Gizmos.DrawLine(centroid, centroid + flockDirection);
+    }
 
 
 }

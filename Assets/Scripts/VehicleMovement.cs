@@ -24,6 +24,9 @@ public abstract class VehicleMovement : MonoBehaviour {
     protected Vector3 desired;
     protected Vector3 previousPosition;
     protected GameObject[] flock;
+    protected Vector3 queueFuturePoint;
+    [SerializeField] protected const float MAX_QUEUE_AHEAD_DIST = 8f;
+    [SerializeField] protected const float MAX_QUEUE_RADIUS = 2.40f;
     // Public fields
     [Tooltip("Maximum speed of the character")]
     public float maxSpeed = 6.0f;
@@ -176,7 +179,7 @@ public abstract class VehicleMovement : MonoBehaviour {
             {
                 tempDist = Vector3.Distance(this.gameObject.transform.position, g.transform.position);
 
-                Debug.Log("TooCose Dis: "+ tooCloseDist + " Distance Now: " + tempDist);
+                //Debug.Log("TooCose Dis: "+ tooCloseDist + " Distance Now: " + tempDist);
                 if (tempDist < tooCloseDist)
                 {
                     sumVel += ((g.transform.position - transform.position) * -1) * maxSpeed * (1 / tempDist);
@@ -205,6 +208,42 @@ public abstract class VehicleMovement : MonoBehaviour {
         desired -= velocity;
         desired.y = 0;
         return desired;
+    }
+    //Queueing
+    protected Vector3 Queue()
+    {
+        Vector3 QueueAhead = velocity.normalized * MAX_QUEUE_AHEAD_DIST;
+        queueFuturePoint = QueueAhead + transform.position;
+
+        Debug.DrawLine(transform.position, queueFuturePoint, Color.red);
+        GameObject flockerAhead = null;
+
+        for (int i = 0; i < flock.Length; i++)
+        {
+            GameObject flocker = flock[i];
+            float dist = (flocker.transform.position - queueFuturePoint).magnitude;
+
+            if(flocker != this && dist <= MAX_QUEUE_RADIUS)
+            {
+                flockerAhead = flocker;
+                break;
+            }
+        }
+        
+        if(flockerAhead != null)
+        {
+            //take action because their is a flocker ahead of you
+            velocity.Scale(new Vector3(0.3f, 0.3f, 0.3f));
+            Debug.Log("Queue applied");
+        }
+
+        return Vector3.zero;
+    }
+    
+    void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawCube(queueFuturePoint, new Vector3(MAX_QUEUE_RADIUS, MAX_QUEUE_RADIUS, MAX_QUEUE_RADIUS));
     }
     #endregion
 }

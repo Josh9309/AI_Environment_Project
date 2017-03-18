@@ -25,6 +25,7 @@ public class Flockers : VehicleMovement
     public float seperateWeight = 40.0f;
     public float alignmentWeight = 20.0f;
     public float cohesionWeight = 20.0f;
+    public float queueingWeight = 40.0f;
 
     // Use this for initialization
     override public void Start()
@@ -85,6 +86,9 @@ public class Flockers : VehicleMovement
         force += Alignment(gm.FlockDirection)* alignmentWeight;
         force += Cohesion(gm.transform.position)* cohesionWeight;
 
+        //queue along the way
+        force += Queue() * queueingWeight;
+
         force = Vector3.ClampMagnitude(force, maxForce);
 
         // applied the steering Force to this Vehicle's acceleration(ApplyForce);
@@ -96,7 +100,7 @@ public class Flockers : VehicleMovement
         tv = leaderFlocker.GetComponent<Leader>().Velocity * (-1);
         tv = tv.normalized * leaderBehindDist;
         behind = leaderFlocker.transform.position + tv;
-        Debug.Log(behind);
+        //Debug.Log(behind);
         return Arrive(behind);
 
     }
