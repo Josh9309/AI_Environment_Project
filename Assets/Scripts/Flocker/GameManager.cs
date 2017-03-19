@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
 //add using System.Collections.Generic; to use the generic list format
@@ -30,6 +31,13 @@ public class GameManager : MonoBehaviour {
 
     private Vector3 flockSeekTarget;
 
+    public Toggle applyCohesion;
+    public Toggle applyAlignment;
+    public Toggle applySeperation;
+    public Toggle applyAvoid;
+    public Toggle applyQueue;
+    public Toggle applySeek;
+
     public Vector3 FlockSeekTarget
     {
         get { return flockSeekTarget; }
@@ -60,6 +68,7 @@ public class GameManager : MonoBehaviour {
         path = GameObject.Find("PathManager").GetComponent<AStarManager>().FlockingPathList;
         flockSeekTarget = path[0].transform.position;
 
+        
     }
 
     void Update()
