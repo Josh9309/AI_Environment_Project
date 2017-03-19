@@ -215,6 +215,8 @@ public abstract class VehicleMovement : MonoBehaviour {
     //Queueing
     protected Vector3 Queue()
     {
+        Vector3 brake = Vector3.zero;
+
         Vector3 QueueAhead = velocity.normalized * MAX_QUEUE_AHEAD_DIST;
         queueFuturePoint = QueueAhead + transform.position;
 
@@ -236,11 +238,18 @@ public abstract class VehicleMovement : MonoBehaviour {
         if(flockerAhead != null)
         {
             //take action because their is a flocker ahead of you
-            velocity.Scale(new Vector3(0.3f, 0.3f, 0.3f));
+            //Braking force method
+            brake.x = -force.x * 0.75f;
+            brake.y = -force.y * 0.75f;
+            brake.z = -force.z * 0.75f;
+            brake += -velocity;
+
+            //Hard Stop Method
+            //velocity.Scale(new Vector3(0.3f, 0.3f, 0.3f));
             Debug.Log("Queue applied");
         }
 
-        return Vector3.zero;
+        return brake;
     }
     
     void OnDrawGizmos()

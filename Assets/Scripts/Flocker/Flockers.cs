@@ -28,7 +28,7 @@ public class Flockers : VehicleMovement
     //private float stayInWeight = 200.0f;
     private float seperateWeight = 60.0f;
     private float alignmentWeight = 30.0f;
-    private float cohesionWeight = 30.0f;
+    private float cohesionWeight = 20.0f;
     private float queueingWeight = 40.0f;
 
     // Use this for initialization
