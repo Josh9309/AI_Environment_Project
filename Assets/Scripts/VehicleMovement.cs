@@ -135,7 +135,19 @@ public abstract class VehicleMovement : MonoBehaviour {
         }
         // collide with an obstacle
         // obj on left, steer right
-        if (Vector3.Dot(vecToCenter, transform.right) < 0)
+        if (ob.GetComponent<ObstacleScript>().goLeft)
+        {
+            desired = transform.right * -maxSpeed;
+            // debug line
+            Debug.DrawLine(transform.position, ob.transform.position, Color.green);
+        }
+        else if (ob.GetComponent<ObstacleScript>().goRight)
+        {
+            desired = transform.right * maxSpeed;
+            // debug line 
+            Debug.DrawLine(transform.position, ob.transform.position, Color.red);
+        }
+        else if (Vector3.Dot(vecToCenter, transform.right) < 0)
         {
             desired = transform.right * maxSpeed;
             // debug line 
