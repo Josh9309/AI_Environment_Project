@@ -23,6 +23,10 @@ public class CameraChange : MonoBehaviour {
             mainCamNum = 4;
         else if (Input.GetKeyDown(KeyCode.Alpha6))
             mainCamNum = 5;
+        else if (Input.GetKeyDown(KeyCode.Alpha7))
+            mainCamNum = 6;
+        else if (Input.GetKeyDown(KeyCode.Alpha8))
+            mainCamNum = 7;
 
         //Disable all cameras
         for (int i = 0; i < cameras.Length; ++i)
