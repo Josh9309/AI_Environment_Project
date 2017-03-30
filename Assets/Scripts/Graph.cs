@@ -96,9 +96,30 @@ public class Graph {
     public void ResetGraph()
     {
         foreach (NavNode n in nodes)
-            n.Walkable = false;
+            n.Walkable = true;
         // Empty priority queue
         while (pq.Dequeue() != null) ;
+    }
+
+    /// <summary>
+    /// Returns the NavNode nearest the location passed in.
+    /// Uses a brute force method so it's not overly pretty, but it gets the job done.
+    /// </summary>
+    public NavNode FindNearestNode(Vector3 loc)
+    {
+        float minDistSqr = float.MaxValue;
+        float tempDistSqr = 0f;
+        int index = -1;
+        for (int i = 0; i < nodes.Length; ++i)
+        {
+            tempDistSqr = Vector3.SqrMagnitude(loc - nodes[i].gameObject.transform.position);
+            if (tempDistSqr < minDistSqr)
+            {
+                index = i;
+                minDistSqr = tempDistSqr;
+            }
+        }
+        return nodes[index];
     }
     #endregion
 }
