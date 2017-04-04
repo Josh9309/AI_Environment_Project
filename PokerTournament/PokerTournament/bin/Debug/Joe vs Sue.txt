@@ -1,0 +1,39 @@
+Starting round 1
+Ante for this round: 10
+Betting round 1:
+Player: Sue Action Phase: Bet1 Action Name: bet Amount: 10
+ 
+Player: Joe Action Phase: Bet1 Action Name: call Amount: 0
+ 
+After Bet1, pot is 40
+ 
+Name: Sue
+Hand Rank: 2 
+Two of Clubs Eight of Spades Eight of Diamonds Jack of Diamonds Ace of Clubs 
+
+ 
+Name: Joe
+Hand Rank: 2 
+Seven of Clubs Eight of Hearts Jack of Hearts Jack of Clubs Ace of Hearts 
+
+ 
+Betting round 2:
+Player: Sue Action Phase: Bet2 Action Name: bet Amount: 50
+ 
+Player: Joe Action Phase: Bet2 Action Name: raise Amount: 50
+ 
+Player: Sue Action Phase: Bet2 Action Name: call Amount: 0
+ 
+Player: Joe Action Phase: Bet2 Action Name: call Amount: 0
+ 
+After Bet2, pot is 240
+ 
+Joe has a better hand and wins 240
+
+After round 1, player status: 
+ Name: Joe Dealer: True Money: 1120
+ Name: Sue Dealer: False Money: 880
+ 
+Starting round 2
+Ante for this round: 10
+Betting round 1:
