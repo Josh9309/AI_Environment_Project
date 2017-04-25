@@ -29,15 +29,17 @@ public class CameraZoom : MonoBehaviour {
             zoomTo += 4f;
         }
 
+        zoomTo = Mathf.Clamp(zoomTo, -45f, 80f);
+
         // create value to raise and lower camera field of view
         currentZoomPos = zoomFrom + zoomTo;
         currentZoomPos = Mathf.Clamp(currentZoomPos, -40f, 75f);
 
-        /*
+        
 
         // Math actual change to Field of View
-        Camera.main.fieldOfView = currentZoomPos;
-
+        cam.fieldOfView = currentZoomPos;
+        /*
         // drag mouse
         if (Input.GetMouseButton(1))
         {
