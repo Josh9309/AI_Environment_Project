@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class UnitPlacement : MonoBehaviour {
     public CameraChange camChange;
@@ -23,6 +24,11 @@ public class UnitPlacement : MonoBehaviour {
 	void Update () {
         if (Input.GetMouseButtonDown(0))
         {
+            if (EventSystem.current.IsPointerOverGameObject())
+            {
+                Debug.Log("UI clicked");
+                return;
+            }
             Ray mouseRay =camChange.cameras[camChange.MainCamNum].GetComponent<Camera>().ScreenPointToRay(Input.mousePosition);
             bool unitPlaced = false;
             int rayCount = 0;
