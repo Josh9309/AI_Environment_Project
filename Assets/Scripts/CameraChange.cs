@@ -9,6 +9,10 @@ public class CameraChange : MonoBehaviour {
 
     private int mainCamNum = 0;
 	
+    public int MainCamNum
+    {
+        get { return mainCamNum; }
+    }
 	void Update () {
         //Find which camera should be used
         if (Input.GetKeyDown(KeyCode.Alpha1))
