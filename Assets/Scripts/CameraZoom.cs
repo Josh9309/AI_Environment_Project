@@ -7,9 +7,9 @@ public class CameraZoom : MonoBehaviour {
     public Camera cam;
     float currentZoomPos, zoomTo;
     float zoomFrom = 50f; // a starting positin
-    Vector3 dragOrigin;
+
     // Move Camera
-    float speed = 2.0f;
+    float speed = 5.0f;
 	// Use this for initialization
 	void Start () {
 		
@@ -39,23 +39,28 @@ public class CameraZoom : MonoBehaviour {
 
         // Math actual change to Field of View
         cam.fieldOfView = currentZoomPos;
-        /*
-        // drag mouse
-        if (Input.GetMouseButton(1))
+        
+        // move Camera
+
+        if(Input.GetKey(KeyCode.W))
         {
-            dragOrigin = Input.mousePosition;
-            Debug.Log("Move ");
-
-            return;
+            transform.Translate(new Vector3(speed, 0,0), Space.World);
         }
-        if (!Input.GetMouseButton(1)) {
-            dragOrigin = Vector3.zero;
-                };
-        Vector3 pos = cam.ScreenToViewportPoint(Input.mousePosition - dragOrigin);
-        Vector3 move = new Vector3(pos.x * speed, 0, pos.y * speed);
-        //Debug.Log("Move " + move);
+        if (Input.GetKey(KeyCode.S))
+        {
+            transform.Translate(new Vector3(-speed, 0, 0), Space.World);
+        }
+        else if (Input.GetKey(KeyCode.D))
+        {
+            transform.Translate(new Vector3(0, 0, -speed), Space.World);
+        }
+        else if (Input.GetKey(KeyCode.A))
+        {
+            transform.Translate(new Vector3(0, 0, speed), Space.World);
+        }
 
-        transform.Translate(move, Space.World);
-        */
+        return;
+
+        
     }
 }
