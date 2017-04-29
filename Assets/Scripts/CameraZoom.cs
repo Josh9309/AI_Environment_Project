@@ -20,15 +20,15 @@ public class CameraZoom : MonoBehaviour {
         // attaches float y to scrollwhell up and down
         float y = Input.mouseScrollDelta.y;
         // if goes up, decrement 10 from zoomto
-        if (y >=1)
+        if (y >= 1 || Input.GetKeyDown(KeyCode.UpArrow))
         {
             zoomTo -=4f;
         }
-        else if(y <= -1)
+        else if(y <= -1 || Input.GetKeyDown(KeyCode.DownArrow))
         {
             zoomTo += 4f;
         }
-
+         
         zoomTo = Mathf.Clamp(zoomTo, -45f, 80f);
 
         // create value to raise and lower camera field of view
