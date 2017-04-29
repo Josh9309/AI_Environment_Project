@@ -10,12 +10,12 @@ public class GridEntry : MonoBehaviour {
     public int RedInfluence
     {
         get { return redInfluence; }
-        set { redInfluence = value; Debug.Log(redInfluence); }
+        set { redInfluence = value; }
     }
     public int GreenInfluence
     {
         get { return greenInfluence; }
-        set { greenInfluence = value; Debug.Log(greenInfluence); }
+        set { greenInfluence = value; }
     }
     public MeshRenderer MeshRend
     {
