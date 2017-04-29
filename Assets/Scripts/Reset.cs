@@ -5,9 +5,10 @@ using UnityEngine;
 public class Reset : MonoBehaviour {
 
     GameObject[] units;
+    Grid gridManager;
 	// Use this for initialization
 	void Start () {
-		
+        gridManager = GameObject.Find("GridManager").GetComponent<Grid>();
 	}
 	
 	// Update is called once per frame
@@ -32,6 +33,7 @@ public class Reset : MonoBehaviour {
 
     public void resetGrid()
     {
-        // Not sure what to do yet
+        gridManager.Reset();
+        gridManager.UpdateInfluenceMap();
     }
 }
