@@ -41,11 +41,34 @@ public class Grid : MonoBehaviour {
     /// <param name="influence">Influence value of the unit</param>
     public void UpdateInfluence(Vector3 transf, bool red, int influence)
     {
-        Vector2 xz = new Vector2((transf.x + 250) / 5, (transf.z + 250) / 5);
+        Vector2 xz = new Vector2((transf.x + 250) / 5.0f, (transf.z + 250) / 5.0f);
+        int xPos = (int)xz.x;
+        int yPos = (int)xz.y;
+        //Determine actual closest grid location
+        float minDist = float.MaxValue;//keep track of minimum distance
+        int closestXindex = xPos, closestYindex = yPos;
+        for (int x = xPos - 2; x < xPos + 2; ++x) 
+        {
+            for(int y = yPos - 2; y < yPos + 2; ++y)
+            {
+                //check out of bounds
+                if (x >= 0 && x<grid.Length && y>=0 && y < grid.Length)
+                {
+                    float tempDist = Vector2.Distance(new Vector2(transf.x, transf.z), new Vector2(grid[x, y].transform.position.x, grid[x, y].transform.position.z));
+                    if (tempDist < minDist)
+                    {
+                        closestXindex = x;
+                        closestYindex = y;
+                        minDist = tempDist;
+                    }
+                }
+            }
+        }
+        xPos = closestXindex;
+        yPos = closestYindex;
+        //
         if (red)
         {
-            int xPos = (int)xz.x;
-            int yPos = (int)xz.y;
             grid[xPos,yPos].GetComponent<GridEntry>().RedInfluence += influence; //set this equal to the intial influence
             int i = 1;
             while(influence-i > 0) {
@@ -223,8 +246,6 @@ public class Grid : MonoBehaviour {
         }
         else
         {
-            int xPos = (int)xz.x;
-            int yPos = (int)xz.y;
             grid[xPos, yPos].GetComponent<GridEntry>().GreenInfluence += influence;
             int i = 1;
             while (influence - i > 0)
